@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueMint Finance Mentor</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="bg-orb bg-orb-one"></div>
+    <div class="bg-orb bg-orb-two"></div>
+
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">AI Personal Finance Mentor</p>
+        <h1>Build a complete money plan with confidence.</h1>
+        <p class="hero-text">
+          Explore six essential planning areas designed to help you understand your financial health,
+          plan long-term goals, prepare for life events, improve tax decisions, coordinate shared finances,
+          and review your investment portfolio with greater clarity.
+        </p>
+      </div>
+      <div class="hero-card">
+        <p class="hero-card-title">Included in your plan</p>
+        <ol class="mini-steps">
+          <li>FIRE path planning with monthly SIP guidance and retirement visibility.</li>
+          <li>Money health scoring across emergency fund, insurance, debt, tax, and retirement.</li>
+          <li>Life-event financial advice based on your current goals, tax bracket, and risk comfort.</li>
+          <li>Tax regime comparison with deduction and tax-saving guidance.</li>
+          <li>Couple planning with shared income, expenses, investments, and insurance inputs.</li>
+          <li>Mutual fund portfolio analysis covering overlap, costs, benchmark comparison, and rebalancing ideas.</li>
+        </ol>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel form-panel">
+        <div class="panel-shell">
+          <aside class="side-slider">
+            <p class="side-slider-label">Input Sections</p>
+            <nav class="side-slider-nav">
+              <a href="#input-fire" class="input-nav-link" data-step-target="0">FIRE Planner</a>
+              <a href="#input-health" class="input-nav-link" data-step-target="1">Money Health Score</a>
+              <a href="#input-event" class="input-nav-link" data-step-target="2">Life Event</a>
+              <a href="#input-tax" class="input-nav-link" data-step-target="3">Tax Wizard</a>
+              <a href="#input-couple" class="input-nav-link" data-step-target="4">Couple Planner</a>
+              <a href="#input-portfolio" class="input-nav-link" data-step-target="5">MF X-Ray</a>
+            </nav>
+          </aside>
+
+          <div class="panel-main">
+            <div class="panel-heading">
+              <p class="eyebrow">Planner Input</p>
+              <h2>Share the details that shape your financial life.</h2>
+              <p class="panel-copy">Each section below corresponds to one planning module and collects the inputs needed for a useful personalised output.</p>
+              <div class="wizard-topbar">
+                <div class="wizard-progress">
+                  <div class="wizard-progress-bar" id="wizard-progress-bar"></div>
+                </div>
+                <p class="wizard-progress-copy" id="wizard-progress-copy">Step 1 of 6</p>
+              </div>
+            </div>
+
+            <form id="finance-form" class="wizard-form">
+              <section class="step-card wizard-step" id="input-fire" data-step="0">
+            <div class="step-badge">1</div>
+            <div class="step-content">
+              <h3>FIRE Path Planner</h3>
+              <p class="module-copy">Tell us your age, income, expenses, investments, and long-term goals to generate a month-by-month roadmap toward financial independence.</p>
+              <div class="field-grid">
+                <label>
+                  Age
+                  <input type="number" name="age" value="29" min="18" max="75" required>
+                </label>
+                <label>
+                  Monthly income
+                  <input type="number" name="monthlyIncome" value="85000" min="0" step="1000" required>
+                </label>
+                <label>
+                  Monthly expenses
+                  <input type="number" name="monthlyExpenses" value="45000" min="0" step="1000" required>
+                </label>
+                <label>
+                  Current savings / investments
+                  <input type="number" name="existingInvestments" value="1200000" min="0" step="10000" required>
+                </label>
+                <label>
+                  Desired FIRE age
+                  <input type="number" name="fireAge" value="47" min="25" max="80" required>
+                </label>
+                <label>
+                  Goal corpus needed
+                  <input type="number" name="goalCorpus" value="40000000" min="0" step="100000" required>
+                </label>
+                <label>
+                  Expected annual return %
+                  <input type="number" name="expectedReturn" value="11" min="0" max="30" step="0.5" required>
+                </label>
+                <label>
+                  Annual salary growth %
+                  <input type="number" name="salaryGrowth" value="8" min="0" max="40" step="0.5" required>
+                </label>
+                <label class="full-width">
+                  Major financial goals
+                  <input type="text" name="primaryGoal" value="Reach financial independence while buying a home in 6 years and preserving flexibility for travel." required>
+                </label>
+              </div>
+            </div>
+              </section>
+
+              <section class="step-card wizard-step" id="input-health" data-step="1">
+            <div class="step-badge">2</div>
+            <div class="step-content">
+              <h3>Money Health Score</h3>
+              <p class="module-copy">Share your savings, protection, debt, investment mix, and retirement base for a score across six financial wellness dimensions.</p>
+              <div class="field-grid">
+                <label>
+                  Emergency fund
+                  <input type="number" name="emergencyFund" value="180000" min="0" step="1000" required>
+                </label>
+                <label>
+                  Annual insurance cover
+                  <input type="number" name="insuranceCover" value="1000000" min="0" step="100000" required>
+                </label>
+                <label>
+                  Total debt outstanding
+                  <input type="number" name="debtOutstanding" value="250000" min="0" step="10000" required>
+                </label>
+                <label>
+                  Annual tax-saving investments
+                  <input type="number" name="taxSavings" value="90000" min="0" step="5000" required>
+                </label>
+                <label>
+                  Retirement corpus so far
+                  <input type="number" name="retirementCorpus" value="550000" min="0" step="10000" required>
+                </label>
+                <label>
+                  Equity allocation %
+                  <input type="number" name="equityAllocation" value="65" min="0" max="100" required>
+                </label>
+                <label>
+                  Gold / international %
+                  <input type="number" name="altAllocation" value="10" min="0" max="100" required>
+                </label>
+              </div>
+            </div>
+              </section>
+
+              <section class="step-card wizard-step" id="input-event" data-step="2">
+            <div class="step-badge">3</div>
+            <div class="step-content">
+              <h3>Life Event Financial Advisor</h3>
+              <p class="module-copy">Tell the planner what is changing in your life so it can recommend the right next money moves.</p>
+              <div class="field-grid">
+                <label>
+                  Life event
+                  <select name="lifeEvent" required>
+                    <option value="bonus">Got a bonus</option>
+                    <option value="marriage">Getting married</option>
+                    <option value="baby">Having a baby</option>
+                    <option value="inheritance">Received inheritance</option>
+                  </select>
+                </label>
+                <label>
+                  Event amount / annual impact
+                  <input type="number" name="eventAmount" value="300000" min="0" step="10000" required>
+                </label>
+                <label>
+                  Risk profile
+                  <select name="riskProfile" required>
+                    <option value="balanced">Balanced</option>
+                    <option value="conservative">Conservative</option>
+                    <option value="aggressive">Aggressive</option>
+                  </select>
+                </label>
+                <label>
+                  Tax bracket %
+                  <input type="number" name="taxBracket" value="20" min="0" max="40" step="1" required>
+                </label>
+              </div>
+            </div>
+              </section>
+
+              <section class="step-card wizard-step" id="input-tax" data-step="3">
+            <div class="step-badge">4</div>
+            <div class="step-content">
+              <h3>Tax Wizard</h3>
+              <p class="module-copy">Upload Form 16 if available or enter your salary and deduction details to compare tax regimes and identify savings opportunities.</p>
+              <div class="field-grid">
+                <label>
+                  Annual salary / CTC
+                  <input type="number" name="annualSalary" value="1200000" min="0" step="10000" required>
+                </label>
+                <label>
+                  Other deductions
+                  <input type="number" name="otherDeductions" value="40000" min="0" step="5000" required>
+                </label>
+                <label>
+                  Existing ELSS / LIC / PPF etc.
+                  <input type="number" name="declaredDeductions" value="90000" min="0" step="5000" required>
+                </label>
+                <label>
+                  Preferred tax regime
+                  <select name="preferredRegime" required>
+                    <option value="compare">Compare both</option>
+                    <option value="old">Old regime</option>
+                    <option value="new">New regime</option>
+                  </select>
+                </label>
+                <label class="full-width">
+                  Form 16 upload
+                  <input type="file" name="form16File" accept=".pdf">
+                  <small class="field-hint" id="form16File-hint">Upload a PDF up to 5 MB.</small>
+                </label>
+              </div>
+            </div>
+              </section>
+
+              <section class="step-card wizard-step" id="input-couple" data-step="4">
+            <div class="step-badge">5</div>
+            <div class="step-content">
+              <h3>Couple's Money Planner</h3>
+              <p class="module-copy">Add both partners' finances to generate a combined plan for investing, insurance, and tax efficiency.</p>
+              <div class="field-grid">
+                <label>
+                  Your monthly income
+                  <input type="number" name="yourMonthlyIncome" value="85000" min="0" step="1000" required>
+                </label>
+                <label>
+                  Partner monthly income
+                  <input type="number" name="partnerMonthlyIncome" value="78000" min="0" step="1000" required>
+                </label>
+                <label>
+                  Household monthly expenses
+                  <input type="number" name="householdExpenses" value="70000" min="0" step="1000" required>
+                </label>
+                <label>
+                  Combined investments
+                  <input type="number" name="combinedInvestments" value="2100000" min="0" step="10000" required>
+                </label>
+                <label>
+                  Combined insurance cover
+                  <input type="number" name="combinedInsurance" value="2500000" min="0" step="100000" required>
+                </label>
+                <label>
+                  Housing status
+                  <select name="housingStatus" required>
+                    <option value="renting">Renting</option>
+                    <option value="own_home">Own home</option>
+                    <option value="planning_home">Planning to buy</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+              </section>
+
+              <section class="step-card wizard-step" id="input-portfolio" data-step="5">
+            <div class="step-badge">6</div>
+            <div class="step-content">
+              <h3>Mutual Fund Portfolio X-Ray</h3>
+              <p class="module-copy">Upload your statement or share portfolio details to review overlap, fees, benchmark performance, and rebalancing priorities.</p>
+              <div class="field-grid">
+                <label>
+                  Portfolio XIRR %
+                  <input type="number" name="portfolioXirr" value="13.8" min="-50" max="100" step="0.1" required>
+                </label>
+                <label>
+                  Benchmark return %
+                  <input type="number" name="benchmarkReturn" value="11.9" min="-50" max="100" step="0.1" required>
+                </label>
+                <label>
+                  Expense ratio %
+                  <input type="number" name="expenseRatio" value="1.35" min="0" max="5" step="0.05" required>
+                </label>
+                <label>
+                  Number of mutual funds
+                  <input type="number" name="fundCount" value="6" min="1" max="30" step="1" required>
+                </label>
+                <label class="full-width">
+                  CAMS / KFintech statement upload
+                  <input type="file" name="portfolioStatement" accept=".pdf">
+                  <small class="field-hint" id="portfolioStatement-hint">Upload a PDF up to 5 MB.</small>
+                </label>
+              </div>
+            </div>
+              </section>
+
+              <div class="wizard-controls">
+                <button type="button" class="secondary-button" id="prev-step-button">Previous</button>
+                <button type="button" class="secondary-button" id="next-step-button">Next</button>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" id="generate-button">Generate Complete Plan</button>
+                <p class="status-text" id="form-status">Complete the sections and generate your personalised plan.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel results-panel">
+        <div class="panel-shell">
+          <aside class="side-slider">
+            <p class="side-slider-label">Output Sections</p>
+            <nav class="side-slider-nav">
+              <a href="#output-summary" class="output-nav-link">Summary</a>
+              <a href="#output-fire" class="output-nav-link">FIRE Planner</a>
+              <a href="#output-health" class="output-nav-link">Money Health Score</a>
+              <a href="#output-event" class="output-nav-link">Life Event</a>
+              <a href="#output-tax" class="output-nav-link">Tax Wizard</a>
+              <a href="#output-couple" class="output-nav-link">Couple Planner</a>
+              <a href="#output-portfolio" class="output-nav-link">MF X-Ray</a>
+              <a href="#output-saved" class="output-nav-link">Saved Plans</a>
+            </nav>
+          </aside>
+
+          <div class="panel-main">
+            <div class="panel-heading">
+              <p class="eyebrow">Planner Output</p>
+              <h2>Your generated finance blueprint</h2>
+              <p class="panel-copy">Each section below reflects one of the requested product modules and shows the input-driven output the user would expect.</p>
+            </div>
+
+            <div id="results-empty" class="empty-state">
+              Submit the planner to see your combined roadmap, scores, tax suggestions, couple plan, and portfolio analysis.
+            </div>
+
+            <div id="results-content" class="results-content hidden">
+              <section class="output-step" id="output-summary">
+                <div class="summary-card">
+                  <p class="eyebrow">Topline Summary</p>
+                  <h3 id="summary-title"></h3>
+                  <p id="summary-text"></p>
+                </div>
+
+                <div class="metrics-grid">
+                  <article class="metric-card">
+                    <span>Money Health Score</span>
+                    <strong id="metric-score">-</strong>
+                  </article>
+                  <article class="metric-card">
+                    <span>Required SIP</span>
+                    <strong id="metric-sip">-</strong>
+                  </article>
+                  <article class="metric-card">
+                    <span>Emergency Target</span>
+                    <strong id="metric-emergency">-</strong>
+                  </article>
+                  <article class="metric-card">
+                    <span>Tax Savings Opportunity</span>
+                    <strong id="metric-tax-saved">-</strong>
+                  </article>
+                </div>
+
+                <div class="chart-grid" id="output-charts">
+                  <article class="chart-card">
+                    <p class="eyebrow">SIP Growth</p>
+                    <h4>Monthly journey to your target</h4>
+                    <div class="chart-surface line-chart" id="fire-chart"></div>
+                  </article>
+                  <article class="chart-card">
+                    <p class="eyebrow">Allocation Mix</p>
+                    <h4>Suggested portfolio balance</h4>
+                    <div class="chart-surface allocation-chart" id="allocation-chart"></div>
+                  </article>
+                  <article class="chart-card">
+                    <p class="eyebrow">Money Health</p>
+                    <h4>Financial wellness dimensions</h4>
+                    <div class="chart-surface bar-chart" id="health-chart"></div>
+                  </article>
+                </div>
+
+                <div class="result-block">
+                  <h3>Priority actions</h3>
+                  <ul id="priority-actions" class="result-list"></ul>
+                </div>
+              </section>
+
+              <div class="module-result-grid">
+                <article class="agent-card output-step" id="output-fire">
+                  <p class="eyebrow">FIRE Path Planner</p>
+                  <h4 id="fire-title">-</h4>
+                  <p id="fire-agent-text"></p>
+                  <ol id="roadmap-list" class="result-list ordered"></ol>
+                </article>
+
+                <article class="agent-card output-step" id="output-health">
+                  <p class="eyebrow">Money Health Score</p>
+                  <h4 id="health-title">-</h4>
+                  <p id="health-agent-text"></p>
+                  <ul id="health-actions" class="result-list"></ul>
+                </article>
+
+                <article class="agent-card output-step" id="output-event">
+                  <p class="eyebrow">Life Event Advisor</p>
+                  <h4 id="event-title">-</h4>
+                  <p id="event-agent-text"></p>
+                  <ul id="event-actions" class="result-list"></ul>
+                </article>
+
+                <article class="agent-card output-step" id="output-tax">
+                  <p class="eyebrow">Tax Wizard</p>
+                  <h4 id="tax-title">-</h4>
+                  <p id="tax-agent-text"></p>
+                  <div class="tax-metric-row">
+                    <span id="tax-old-regime">Old: -</span>
+                    <span id="tax-new-regime">New: -</span>
+                  </div>
+                  <ul id="tax-actions" class="result-list"></ul>
+                </article>
+
+                <article class="agent-card output-step" id="output-couple">
+                  <p class="eyebrow">Couple's Money Planner</p>
+                  <h4 id="couple-title">-</h4>
+                  <p id="couple-agent-text"></p>
+                  <ul id="couple-actions" class="result-list"></ul>
+                </article>
+
+                <article class="agent-card output-step" id="output-portfolio">
+                  <p class="eyebrow">Mutual Fund Portfolio X-Ray</p>
+                  <h4 id="portfolio-title">-</h4>
+                  <p id="portfolio-agent-text"></p>
+                  <ul id="portfolio-actions" class="result-list"></ul>
+                </article>
+
+                <article class="agent-card output-step" id="output-saved">
+                  <p class="eyebrow">Saved Plans And Report</p>
+                  <h4>Access your stored plan history</h4>
+                  <p>Review recently generated plans and download the current plan report from this section.</p>
+                  <button type="button" class="secondary-button report-button hidden" id="download-report-button">Download Plan Report</button>
+                  <div class="result-block result-block-tight" id="saved-plans-block">
+                    <h3>Saved plans</h3>
+                    <ul id="saved-plans-list" class="result-list"></ul>
+                  </div>
+                </article>
+              </div>
+
+              <div class="wizard-controls output-controls">
+                <button type="button" class="secondary-button" id="prev-output-button">Previous</button>
+                <button type="button" class="secondary-button" id="next-output-button">Next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

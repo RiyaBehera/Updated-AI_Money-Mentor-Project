@@ -1,0 +1,15 @@
+.env
+finance_mentor.db
+ARCHITECTURE_DIAGRAM.txt
+PROJECT_REPORT.md
+VIVA_SCRIPT.md
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+.DS_Store
